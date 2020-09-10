@@ -5,3 +5,5 @@
 ## HOW TO SOLVE
 
 [![Video of Solving](https://raw.githubusercontent.com/Sharkbyteprojects/IAAPP/shrx/i.png)](https://vimeo.com/456533890)
+
+# NOTE: Don't make your app like this!!
