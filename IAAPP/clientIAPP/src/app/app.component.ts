@@ -47,7 +47,11 @@ export class AppComponent {
             crypto.HmacMD5(stri, 'sharkbyte')
           );
           if (hashss == sum) {
-            operation(JSON.parse(stri));
+            class itemsss{
+              public authorized:number;
+            }
+            const itemss:itemsss=JSON.parse(stri);
+            operation({authorized: (itemss.authorized&&itemss.authorized<=50)});
           }
         });
     } else {

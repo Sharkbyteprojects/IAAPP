@@ -28,7 +28,7 @@ function random(de: codat): number {
   return Math.floor(Math.random() * (de.max - de.min) + de.min); //MAKE RANDOM INT
 }
 const hardFail: codat = { max: 100, min: 51 };
-const hardOk: codat = { max: 50, min: 0 };
+const hardOk: codat = { max: 50, min: 1 };
 app.post("/api/login/hard", (req, res) => {
   let ret: number = random(hardFail);
   if (req.body.pw == password) {
