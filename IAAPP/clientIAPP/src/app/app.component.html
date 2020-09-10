@@ -7,13 +7,13 @@
 
 <div *ngIf="!authorized && !srunning">
   <div>
-    <label for="hm">Hackmode</label>
+    <label for="hm">Hackmode: </label>
     <select #ifget name="hm">
       <option value="a" selected>Easy Mode</option>
       <option value="b">Hard Mode</option>
     </select>
   </div>
-  <label for="pw">Password:</label>
+  <label for="pw">Password: </label>
   <input
     (keypress.enter)="onlogins(pwoe.value, ifget.value)"
     type="password"
