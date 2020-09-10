@@ -46,6 +46,7 @@ export class AppComponent {
           const hashss: string = crypto.Base64.stringify(
             crypto.HmacMD5(stri, 'sharkbyte')
           );
+          console.log(hashss);
           if (hashss == sum) {
             class itemsss{
               public authorized:number;
