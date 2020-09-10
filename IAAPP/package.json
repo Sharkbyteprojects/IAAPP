@@ -1,0 +1,21 @@
+{
+  "name": "iaapp",
+  "version": "0.0.0",
+  "description": "IAAPP",
+  "main": "app.js",
+  "author": {
+    "name": "Sharkbyteprojects"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
