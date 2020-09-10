@@ -1,4 +1,4 @@
-FROM node:10.1.0
+FROM node:latest
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm i
