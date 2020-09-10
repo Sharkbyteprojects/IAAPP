@@ -40,7 +40,7 @@ app.post("/api/login/hard", (req, res) => {
     "utf8"
   ).toString("base64");
   const sec: string = sgs;
-  res.json({ dataset: [d, sec] });
+  res.json([d, sec]);
 });
 
 app.listen(8080, () => {
