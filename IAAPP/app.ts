@@ -1,7 +1,6 @@
 const express: any = require("express");
 const app: any = express();
-const crypto: any = require("crypto");
-const password: string = process.env.ipw || crypto.createHash("md5").update(Math.random().toString()).digest("hex");
+const password: string = process.env.ipw ||Math.random().toString();
 const bp: any = require("body-parser");
 app.use(bp.json());
 app.use(bp.urlencoded());
