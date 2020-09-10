@@ -1,0 +1,13 @@
+e2e
+.browserslistrc
+.editorconfig
+.girignore
+angular.json
+karma.conf.js
+package.json
+tsconfig.app.json
+tsconfig.base.json
+node_modules
+tsconfig.json
+tsconfig.spec.json
+tslint.json
