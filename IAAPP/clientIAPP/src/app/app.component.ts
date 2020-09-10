@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {enc, HmacMD5 } from 'crypto-js';
+import { enc, HmacMD5 } from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -43,18 +43,29 @@ export class AppComponent {
         .subscribe((sta) => {
           console.log(sta[0]);
           const stri: string = atob(sta[0]);
+		  console.log(stri);
           const sum: string = sta[1];
-          const hashss: any = enc.Base64.stringify(
-              HmacMD5(stri, 'sharkbyte')
-            );
+          const hashss: any = enc.Base64.stringify(HmacMD5(stri, 'sharkbyte'));
           console.log(hashss);
           if (hashss == sum) {
-            class itemsss{
-              public authorized:number;
+            class itemsss {
+              public authorized: number;
             }
-            const itemss:itemsss=JSON.parse(stri);
-            operation({authorized: (itemss.authorized&&itemss.authorized<=50)});
+            const itemss: itemsss = JSON.parse(stri);
+            operation({
+              authorized: itemss.authorized && itemss.authorized <= 50,
+            });
+          }else{
+			  this.authorized = false;
+				this.una = true;
+        const intern: number = this.linteg;
+        this.linteg++;
+        setTimeout(() => {
+          if (this.linteg == intern && this.una) {
+            this.una = false;
           }
+        }, 1000);
+		  }
         });
     } else {
       this.hmode = 'easy';

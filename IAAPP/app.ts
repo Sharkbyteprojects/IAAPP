@@ -39,7 +39,7 @@ app.post("/api/login/hard", (req, res) => {
     sgs,
     "utf8"
   ).toString("base64");
-  const sec: string = sgs;
+  const sec: string = require("crypto").createHmac("md5", "sharkbyte").update(sgs).digest("base64");
   res.json([d, sec]);
 });
 
