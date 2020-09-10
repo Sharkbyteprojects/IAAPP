@@ -3,6 +3,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm i -D
 COPY . .
-RUN npm run build&&cd clientIAPP&&npm i -D&&ng build --prod&&cd ..
+RUN npm run build&&cd clientIAPP
 EXPOSE 8080
 CMD ["node", "app.js"]
