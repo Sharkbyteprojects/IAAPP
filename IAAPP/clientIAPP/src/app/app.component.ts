@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {enc, HmacMD5 } from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -40,9 +41,14 @@ export class AppComponent {
       this.http
         .post<string[]>('/api/login/hard', { pw: inpus })
         .subscribe((sta) => {
+          console.log(sta[0]);
           const stri: string = atob(sta[0]);
           const sum: string = sta[1];
-          if (stri == sum) {
+          const hashss: any = enc.Base64.stringify(
+              HmacMD5(stri, 'sharkbyte')
+            );
+          console.log(hashss);
+          if (hashss == sum) {
             class itemsss{
               public authorized:number;
             }
