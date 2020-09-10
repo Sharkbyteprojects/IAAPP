@@ -43,7 +43,7 @@ export class AppComponent {
         .subscribe((sta) => {
           const stri: string = atob(sta[0]);
           const sum: string = sta[1];
-          const hashss: string = crypto.Base64.stringify(
+          const hashss: string = crypto.enc.Base64.stringify(
             crypto.HmacMD5(stri, 'sharkbyte')
           );
           console.log(hashss);
