@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as crypto from 'crypto-js';
+import {enc, HmacMD5 } from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -43,8 +43,8 @@ export class AppComponent {
         .subscribe((sta) => {
           const stri: string = atob(sta[0]);
           const sum: string = sta[1];
-          const hashss: string = crypto.enc.Base64.stringify(
-            crypto.HmacMD5(stri, 'sharkbyte')
+          const hashss: string = enc.Base64.stringify(
+            HmacMD5(stri, 'sharkbyte')
           );
           console.log(hashss);
           if (hashss == sum) {
