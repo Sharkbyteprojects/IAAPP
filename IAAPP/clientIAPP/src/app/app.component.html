@@ -1,6 +1,12 @@
 <h1>{{title}}</h1>
 <h2>Insecure Authentification App</h2>
 
+<div *ngIf="una">
+<strong>Unauthorized</strong>
+<p>Try Again!</p>
+</div>
+
+
 <div *ngIf="!authorized">
     <label for="pw">Password:</label>
     <input (keypress.enter)="onlogins(pwoe.value)" type="password" placeholder="Passwd" name="pw" #pwoe>
