@@ -6,7 +6,7 @@ const bp: any = require("body-parser");
 app.use(bp.json());
 app.use(bp.urlencoded());
 const path: any = require("path");
-const pathto: string[] = [__dirname, "clientIAPP"];
+const pathto: string[] = [__dirname, "clientIAPP", "dist", "clientIAPP"];
 app.use(express.static(path.resolve(...pathto)));
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(...pathto, "index.html"));

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc --build",
+	"jd": "npm run build&&cd clientIAPP&&npm i -D&&ng build --prod&&cd .."
     "clean": "tsc --build --clean"
   },
   "devDependencies": {
