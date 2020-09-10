@@ -6,6 +6,6 @@ RUN npm i -g typescript
 RUN npm install -g @angular/cli
 RUN npm i -g @types/node
 COPY . .
-RUN tsc app.ts&&cd clientIAPP&&npm i -D&&npx ng build --prod
+RUN tsc app.ts&&cd clientIAPP&&npm i -D&&ng build --prod
 EXPOSE 8080
 CMD ["node", "app.js"]
