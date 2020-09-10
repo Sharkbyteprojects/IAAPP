@@ -1,23 +1,34 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <h2>Insecure Authentification App</h2>
-
 <div *ngIf="una">
-<strong>Unauthorized</strong>
-<p>Try Again!</p>
+  <strong>Unauthorized</strong>
+  <p>Try Again!</p>
 </div>
 
-
-<div *ngIf="!authorized">
-    <label for="pw">Password:</label>
-    <input (keypress.enter)="onlogins(pwoe.value)" type="password" placeholder="Passwd" name="pw" #pwoe>
-    <br>
-    <button (click)="onlogins(pwoe.value)">Login</button>
+<div *ngIf="!authorized && !srunning">
+  <div>
+    <label for="hm">Hackmode</label>
+    <select #ifget name="hm">
+      <option value="a" selected>Easy Mode</option>
+      <option value="b">Hard Mode</option>
+    </select>
+  </div>
+  <label for="pw">Password:</label>
+  <input
+    (keypress.enter)="onlogins(pwoe.value, ifget.value)"
+    type="password"
+    placeholder="Passwd"
+    name="pw"
+    #pwoe
+  />
+  <br />
+  <button (click)="onlogins(pwoe.value, ifget.value)">Login</button>
 </div>
 
 <div *ngIf="authorized">
-    <button (click)="logouts()">Logout</button>
-    <br>
-    <div><onsucess xrs="Low"></onsucess></div>
+  <button (click)="logouts()">Logout</button>
+  <br />
+  <div><onsucess xrs="{{ hmode }}"></onsucess></div>
 </div>
 
 <p>&copy;Sharkbyteprojects</p>

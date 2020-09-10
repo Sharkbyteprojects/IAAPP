@@ -6,15 +6,9 @@ import { AppComponent } from './app.component';
 import { OnsucessComponent } from './onsucess/onsucess.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    OnsucessComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+  declarations: [AppComponent, OnsucessComponent],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
