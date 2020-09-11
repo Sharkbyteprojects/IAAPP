@@ -6,6 +6,15 @@ app.use(bp.json());
 app.use(bp.urlencoded());
 //ANGULAR SERVE
 const path: any = require("path");
+const fs = require('fs');
+class cert{
+	public key:any;
+	public cert:any;
+};
+const optionsS:cert = {
+  key: fs.readFileSync(path.resolve(__dirname,"HTTPS", "key.pem")),
+  cert: fs.readFileSync(path.resolve(__dirname,"HTTPS", "cert.pem"))
+};
 const pathto: string[] = [__dirname, "clientIAPP", "dist", "clientIAPP"];
 app.use(express.static(path.resolve(...pathto)));
 app.get("/", (req, res) => {
@@ -42,7 +51,9 @@ app.post("/api/login/hard", (req, res) => {
   const sec: string = require("crypto").createHmac("md5", "sharkbyte").update(sgs).digest("base64");
   res.json([d, sec]);
 });
-
+require("https").createServer(optionsS,app).listen(8081,()=>{
+	console.log(`App listen on https://localhost:8080 with password ${password}`);
+});
 app.listen(8080, () => {
-  console.log(`App listen on 8080 with password ${password}`); //SHOW APP ONLINE
+  console.log(`App listen on http://localhost:8080 with password ${password}`); //SHOW APP ONLINE
 });
