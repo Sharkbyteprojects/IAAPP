@@ -11,6 +11,8 @@ THIS APP IS FOR PENTESTING STARTER, <strong>NOT</strong> for normal Use!
 + NOW PSEUDO HTTPS!
 ```
 
+[DOWNLOAD CA CERT](https://github.com/Sharkbyteprojects/IAAPP/raw/master/IAAPP/HTTPS/cacert.pem)
+
 ## HOW TO SOLVE
 
 [![Video of Solving](https://raw.githubusercontent.com/Sharkbyteprojects/IAAPP/shrx/i.png)](https://vimeo.com/456533890)
